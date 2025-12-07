@@ -54,6 +54,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/system/', '/system_ext/'),
     'system_ext/priv-app/ims/ims.apk': blob_fixup()
         .apktool_patch('ims-patches'),
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libinput_shim.so'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
     'vendor/lib64/sensors.moto.so': blob_fixup()
